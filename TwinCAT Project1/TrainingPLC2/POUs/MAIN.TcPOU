@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="MAIN" Id="{c64330fb-d57a-4062-809d-d9c7753c4dc9}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	counter : UINT;
+	toggle: BOOL;
+	pushButton	:BOOL;
+	clickButton :BOOL;
+	light 		:BOOL;
+	t1 			:TON;
+	tr1			:R_TRIG;
+	pulse		:TP;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//counter:= counter+2;
+
+//t1(IN:=pushButton, PT:= T#5S, Q=> light, ET=> );
+//t1(PT:= T#5S );
+//t1.IN:=pushButton;
+
+pulse(IN:= pushButton, PT:= T#500MS, Q=> , ET=> ); 
+
+
+CLICK_ROUTINE(pushButton:=pushButton, pulseOutput=>clickButton);
+
+tr1(CLK:= clickButton, Q=> light);
+
+
+
+//IF counter > 1000 THEN
+//	counter := 0;
+//	toggle := NOT toggle;
+	
+//	NEWSUBROUTINE(input:=toggle);
+//	//comment
+//	(*
+//	multi
+//	line 
+//	comment
+//	*)
+//END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="34" Count="1" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="10" Count="1" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="16" Count="2" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

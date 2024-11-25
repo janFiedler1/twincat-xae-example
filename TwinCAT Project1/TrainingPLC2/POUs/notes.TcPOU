@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="notes" Id="{435b32a7-83f5-464f-b5b0-8632d772ace8}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM notes
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*
+To add a shortcut:
+1. Tools -> Options -> Environment -> Keyboard
+2. Search for functions
+	Example: Logintonone
+3. Press shortcut keys -> Assign
+
+
+
+Change variables while running program
+1. Add value to 'prepared values' column
+2. 'Write values' (top right)
+	Shortcut -> Alt-W 
+	
+	
+Shortcuts:
+Write values: Alt-W
+Login: Alt-X
+Logout: Alt-Z
+Input assistant: F2 (or right click in program section
+
+Terms:
+Rising edge: when input goes from low to high
+Falling edge: opposite of above
+
+Notes:
+Libraries are in PLC -> references
+Set reserved/shared cores in SYSTEM-> Real-Time
+Set run speed (cycles) in PLC -> PlcTask, or SYSTEM -> Tasks -> PlcTask
+Multi line comments  -> (**)
+Regular comment -> /
+
+if statement:
+IF {condition} THEN
+	{body}
+END_IF
+
+loop:
+FOR variable := start-value TO end-value [ BY step-value ] DO
+    statement;
+    statement;
+    ..
+    statement;
+END_FOR;
+
+function:
+Function CalcStdDev : LREAL
+var_input v1,v2,v3,v4 : LREAL; end_var
+
+var 
+    SumOfSquares : LREAL;
+    Mean : LREAL;
+end_var
+
+    (* Calculate the mean *)
+    Mean := (v1 + v2 + v3 + v4) / 4;
+
+    (* Calculate the standard deviation *)
+    SumOfSquares := (v1 - Mean) ** 2 +
+                (v2 - Mean) ** 2 +
+                (v3 - Mean) ** 2 +
+                (v4 - Mean) ** 2;
+
+    CalcStdDev := sqrt( SumOfSquares / 4 );
+End_Function
+
+*)]]></ST>
+    </Implementation>
+    <LineIds Name="notes">
+      <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="3" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="14" Count="2" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="17" Count="9" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="30" Count="1" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="35" Count="4" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="42" Count="2" />
+      <LineId Id="46" Count="1" />
+      <LineId Id="59" Count="4" />
+      <LineId Id="58" Count="0" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="67" Count="17" />
+      <LineId Id="66" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="6" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

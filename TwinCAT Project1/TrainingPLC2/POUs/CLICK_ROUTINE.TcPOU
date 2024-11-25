@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="CLICK_ROUTINE" Id="{0420af6a-a9b6-4312-9a7a-c27a7638216b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM CLICK_ROUTINE
+
+VAR_INPUT
+	pushButton	:BOOL;
+END_VAR
+
+VAR_OUTPUT
+	pulseOutput	:BOOL;
+END_VAR
+
+VAR
+	pulse		:TP;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[pulse(IN:= pushButton, PT:= t#500ms, Q=> pulseOutput, ET=> ); ]]></ST>
+    </Implementation>
+    <LineIds Name="CLICK_ROUTINE">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="NEWSUBROUTINE" Id="{1dfba1ce-1774-4278-82cf-8990bce4e998}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM NEWSUBROUTINE
+
+VAR_INPUT
+	input	:BOOL;	
+END_VAR
+VAR
+	c1		:CTD;
+	counter2 :LREAL:=3.5;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//c1(
+//	CD:= , 
+//	LOAD:= , 
+//	PV:= , 
+//	Q=> , 
+//	CV=> );
+
+
+//IF input = TRUE THEN
+//	counter2 := counter2 + 1;
+//ELSE
+//	counter2 := counter2 - 1;
+//END_IF
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="NEWSUBROUTINE">
+      <LineId Id="30" Count="4" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="28" Count="1" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="22" Count="2" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
