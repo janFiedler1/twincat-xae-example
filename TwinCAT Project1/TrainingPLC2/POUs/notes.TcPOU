@@ -72,6 +72,52 @@ end_var
     CalcStdDev := sqrt( SumOfSquares / 4 );
 End_Function
 
+
+
+INPUT VARIABLE
+var AT %I* : TYPE
+OUTPUT VARIABLE
+var AT %Q* : TYPE
+
+
+Variable types
+BOOL
+INTEGER
+- BYTE
+- WORD
+- DWORD
+- LWORD
+more common
+- SINT
+- INT
+- DINT
+- LINT
+- U+^ (unsigned)
+FLOATING POINT
+- REAL (32 bit)
+- LREAL (64 bit)
+TIME
+- TIME (T#5d5h5m5s5ms)
+- LTIME (LTIME#5d5h5m5s5ms5us5ns)
+DATE
+- LOTS (D#xxxx)
+STRING
+more
+BIT
+POINTER
+REFERENCE
+UNION
+ANY
++user data types
+
+
+all are 0 (or false) by default
+constants 
+VAR CONSTANT
+	(must be assigned)
+END_VAR
+
+
 *)]]></ST>
     </Implementation>
     <LineIds Name="notes">
@@ -97,6 +143,27 @@ End_Function
       <LineId Id="64" Count="0" />
       <LineId Id="67" Count="17" />
       <LineId Id="66" Count="0" />
+      <LineId Id="89" Count="2" />
+      <LineId Id="88" Count="0" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="96" Count="1" />
+      <LineId Id="95" Count="0" />
+      <LineId Id="98" Count="0" />
+      <LineId Id="100" Count="0" />
+      <LineId Id="104" Count="4" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="101" Count="2" />
+      <LineId Id="109" Count="4" />
+      <LineId Id="115" Count="11" />
+      <LineId Id="129" Count="1" />
+      <LineId Id="128" Count="0" />
+      <LineId Id="131" Count="0" />
+      <LineId Id="133" Count="0" />
+      <LineId Id="135" Count="0" />
+      <LineId Id="134" Count="0" />
+      <LineId Id="114" Count="0" />
       <LineId Id="32" Count="0" />
       <LineId Id="6" Count="0" />
     </LineIds>
