@@ -14,9 +14,27 @@
 		</System>
 		<Plc>
 			<Project GUID="{DB6D5E6D-4274-4947-B878-83A1C762C5CD}" Name="TrainingPLC2" PrjFilePath="TrainingPLC2\TrainingPLC2.plcproj" TmcFilePath="TrainingPLC2\TrainingPLC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TrainingPLC2\TrainingPLC2.tmc" TmcHash="{4CE3FD81-B78F-B2F9-9F1F-B4973AC414AF}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TrainingPLC2\TrainingPLC2.tmc" TmcHash="{53A99E69-73BA-D973-8DB0-FC2FD80DB6F8}">
 					<Name>TrainingPLC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>prgPumpControl.bStart_PB</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>prgPumpControl.bStop_PB</Name>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" AreaNo="1">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>prgPumpControl.bPumpRelay</Name>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
 					<Contexts>
 						<Context>
 							<Id>0</Id>
@@ -34,15 +52,23 @@
 				</Instance>
 			</Project>
 			<Project GUID="{B7C09259-9940-4BDB-8345-26DCF09DF342}" Name="PLC3" PrjFilePath="PLC3\PLC3.plcproj" TmcFilePath="PLC3\PLC3.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{2C857F44-4D1D-CD46-C120-B6600EF0A8CE}">
 					<Name>PLC3 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
 						<Context>
-							<Id>1</Id>
-							<Name>Default</Name>
+							<Id>0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010040</OTCID>
+							</ManualConfig>
+							<Priority>21</Priority>
+							<CycleTime>10000000</CycleTime>
 						</Context>
 					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="21" OTCID="#x08502041"/>
+					</TaskPouOids>
 				</Instance>
 			</Project>
 		</Plc>

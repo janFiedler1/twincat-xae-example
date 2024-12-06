@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="CalculateSine" Id="{448da375-44f6-4116-a111-80de455fbe46}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION CalculateSine : REAL
+VAR_INPUT
+	angle_in_radians : REAL;
+END_VAR
+
+VAR_OUTPUT
+	sine_value : REAL;
+END_VAR
+
+    ]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[sine_value := SIN(angle_in_radians);]]></ST>
+    </Implementation>
+    <LineIds Name="CalculateSine">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

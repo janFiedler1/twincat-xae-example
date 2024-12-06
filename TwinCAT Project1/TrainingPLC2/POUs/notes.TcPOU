@@ -7,6 +7,12 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[(*
+
+
+https://docs.google.com/document/d/1TtsSPKcGf5wqr-mFV1IPG9VzqW2f_MM_MVhuRm0hRRs/edit?tab=t.0
+
+
+
 To add a shortcut:
 1. Tools -> Options -> Environment -> Keyboard
 2. Search for functions
@@ -122,6 +128,10 @@ END_VAR
     </Implementation>
     <LineIds Name="notes">
       <LineId Id="5" Count="0" />
+      <LineId Id="137" Count="1" />
+      <LineId Id="136" Count="0" />
+      <LineId Id="140" Count="1" />
+      <LineId Id="139" Count="0" />
       <LineId Id="7" Count="3" />
       <LineId Id="12" Count="0" />
       <LineId Id="14" Count="2" />

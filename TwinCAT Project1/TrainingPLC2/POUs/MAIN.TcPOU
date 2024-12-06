@@ -3,7 +3,7 @@
   <POU Name="MAIN" Id="{c64330fb-d57a-4062-809d-d9c7753c4dc9}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	counter : UINT;
+	counter : REAL := 1;
 	toggle: BOOL;
 	pushButton	:BOOL;
 	clickButton :BOOL;
@@ -11,12 +11,19 @@ VAR
 	t1 			:TON;
 	tr1			:R_TRIG;
 	pulse		:TP;
+	
+	sine		:REAL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[prgPumpControl();
+IF counter > 4000 THEN
+	counter := 0;
+ELSE
+	counter := counter+1;
+END_IF
 
-
+sine := SIN(counter/500);
 
 
 
@@ -43,8 +50,53 @@ END_VAR
 //	*)
 //END_IF]]></ST>
     </Implementation>
+    <Action Name="ACT" Id="{5b52bf2f-4d04-42d6-84de-942ff01eddc7}">
+      <Implementation>
+        <NWL>
+          <XmlArchive>
+            <Data>
+              <o xml:space="preserve" t="NWLImplementationObject">
+                <v n="NetworkListComment">""</v>
+                <v n="DefaultViewMode">"Ld"</v>
+                <l2 n="NetworkList" cet="Network">
+                  <o>
+                    <v n="ILActive">false</v>
+                    <v n="FBDValid">false</v>
+                    <v n="ILValid">false</v>
+                    <l2 n="ILLines" />
+                    <v n="Comment">""</v>
+                    <v n="Title">""</v>
+                    <v n="Label">""</v>
+                    <v n="OutCommented">false</v>
+                    <l2 n="NetworkItems" />
+                    <l2 n="Connectors" />
+                    <v n="Id">1L</v>
+                  </o>
+                </l2>
+                <v n="BranchCounter">1</v>
+                <v n="ValidIds">true</v>
+              </o>
+            </Data>
+            <TypeList>
+              <Type n="Boolean">System.Boolean</Type>
+              <Type n="Int32">System.Int32</Type>
+              <Type n="Int64">System.Int64</Type>
+              <Type n="Network">{d9a99d73-b633-47db-b876-a752acb25871}</Type>
+              <Type n="NWLImplementationObject">{25e509de-33d4-4447-93f8-c9e4ea381c8b}</Type>
+              <Type n="String">System.String</Type>
+            </TypeList>
+          </XmlArchive>
+        </NWL>
+      </Implementation>
+    </Action>
     <LineIds Name="MAIN">
-      <LineId Id="59" Count="6" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="60" Count="5" />
       <LineId Id="2" Count="0" />
       <LineId Id="30" Count="0" />
       <LineId Id="29" Count="0" />
