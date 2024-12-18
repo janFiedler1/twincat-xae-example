@@ -3,8 +3,8 @@
   <POU Name="MAIN" Id="{c64330fb-d57a-4062-809d-d9c7753c4dc9}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	counter : REAL := 1;
-	toggle: BOOL;
+	counter 	:INT := 1;
+	toggle		:BOOL;
 	pushButton	:BOOL;
 	clickButton :BOOL;
 	light 		:BOOL;
@@ -13,17 +13,24 @@ VAR
 	pulse		:TP;
 	
 	sine		:REAL;
+	triangle	:REAL;
+	sawtooth	:REAL;
+	null1		:REAL :=0;
+	null2		:REAL :=0;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[prgPumpControl();
-IF counter > 4000 THEN
+IF counter > 1000 THEN
 	counter := 0;
 ELSE
 	counter := counter+1;
 END_IF
 
-sine := SIN(counter/500);
+sine := SIN((counter+1.1)/50);
+triangle := counter MOD 25;
+sawtooth := (counter MOD 10)/5;
+//new comment
 
 
 
@@ -96,7 +103,11 @@ sine := SIN(counter/500);
       <LineId Id="71" Count="0" />
       <LineId Id="73" Count="0" />
       <LineId Id="70" Count="0" />
-      <LineId Id="60" Count="5" />
+      <LineId Id="60" Count="1" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="62" Count="3" />
       <LineId Id="2" Count="0" />
       <LineId Id="30" Count="0" />
       <LineId Id="29" Count="0" />

@@ -4,7 +4,7 @@
 		<System>
 			<Settings MaxCpus="8"/>
 			<Tasks>
-				<Task Id="3" Priority="20" CycleTime="10000" AmsPort="350" AdtTasks="true">
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
 				<Task Id="4" Priority="21" CycleTime="100000" AmsPort="351" AdtTasks="true">
@@ -14,7 +14,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{DB6D5E6D-4274-4947-B878-83A1C762C5CD}" Name="TrainingPLC2" PrjFilePath="TrainingPLC2\TrainingPLC2.plcproj" TmcFilePath="TrainingPLC2\TrainingPLC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TrainingPLC2\TrainingPLC2.tmc" TmcHash="{53A99E69-73BA-D973-8DB0-FC2FD80DB6F8}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TrainingPLC2\TrainingPLC2.tmc" TmcHash="{B8EAB1A4-0194-D8E1-D314-9E23C4160B1E}">
 					<Name>TrainingPLC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -43,7 +43,7 @@
 								<OTCID>#x02010030</OTCID>
 							</ManualConfig>
 							<Priority>20</Priority>
-							<CycleTime>1000000</CycleTime>
+							<CycleTime>10000000</CycleTime>
 						</Context>
 					</Contexts>
 					<TaskPouOids>
